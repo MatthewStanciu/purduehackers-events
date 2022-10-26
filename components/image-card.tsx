@@ -22,6 +22,7 @@ const ImageCard = ({
     <div className="flex flex-col mx-auto hover:scale-[1.03] transition transform">
       <Image
         src={image.url}
+        alt="Recap image from Airtable"
         width={image.width}
         height={image.height}
         key={image.url}
@@ -29,7 +30,6 @@ const ImageCard = ({
         className="rounded-lg"
         onClick={() => (click ? click(index) : {})}
       />
-      {/* <div className="bg-gray-700 text-center py-3 rounded-b">Hi</div> */}
     </div>
   )
 }
