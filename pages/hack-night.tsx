@@ -1,6 +1,5 @@
 import { GetStaticProps } from 'next'
 import { fetchEvents } from '../lib/fetchEvents'
-import { fetchRecurringEvent } from '../lib/fetchRecurringEvents'
 
 const HackNight = ({ events }: { events: PHEvent[] }) => {
   ;<div className="flex flex-row px-20">
