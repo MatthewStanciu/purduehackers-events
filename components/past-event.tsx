@@ -55,7 +55,7 @@ const PastEvent = ({ event }: { event: PHEvent }) => {
 
         <div className="flex flex-col grow-0 items-center justify-top w-full flex-1 px-5 pb-8 sm:pb-16 text-center sm:px-20 bg-gray-100 dark:bg-gray-800">
           <div className="mt-20 sm:mt-28">
-            <h1 className="text-4xl sm:text-7xl lg:text-8-xl font-bold text-amber-400 dark:text-amber-500">
+            <h1 className="text-4xl sm:text-7xl lg:text-8xl font-bold text-amber-400 dark:text-amber-500">
               {event.name}
             </h1>
             <p className="mt-3 text-1xl sm:text-2xl flex flex-row gap-x-1 font-bold items-center justify-center dark:text-gray-200">
