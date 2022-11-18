@@ -33,3 +33,8 @@ interface PHEvent {
   stat3Label: string
   stat3Data: string
 }
+
+interface RecurringEvent {
+  name: string
+  events: string[]
+}

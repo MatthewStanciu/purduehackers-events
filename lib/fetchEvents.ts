@@ -35,10 +35,11 @@ interface AirtableFields {
   'Stat 3 Label': string
 }
 
-export const fetchEvents = async (): Promise<PHEvent[]> => {
+export const fetchEvents = async (name?: string): Promise<PHEvent[]> => {
   const slugger = new GithubSlugger()
-  const airtableEvents =
-    (await airtable.read()) as unknown as AirtablePlusPlusRecord<AirtableFields>[]
+  const airtableEvents = (name
+    ? await airtable.read({ filterByFormula: `FIND("${name}", {Event Name})` })
+    : await airtable.read()) as unknown as AirtablePlusPlusRecord<AirtableFields>[]
   const events = airtableEvents.map(({ id, fields }) => ({
     id,
     name: fields['Event Name'] ?? 'Mysterious Event',
