@@ -1,14 +1,13 @@
 import { useTheme } from 'next-themes'
-import { useEffect, useState } from 'react'
 import { Moon, Sun } from 'react-feather'
 
 const ThemeButton = () => {
-  const [mounted, setMounted] = useState(false)
+  // const [mounted, setMounted] = useState(false)
   const { setTheme, resolvedTheme } = useTheme()
 
-  useEffect(() => setMounted(true), [])
+  // useEffect(() => setMounted(true), [])
 
-  if (!mounted) return null
+  // if (!mounted) return null
 
   return (
     <button
