@@ -15,6 +15,7 @@ function formatTime(date: Date) {
 
 const getCalLink = (event: SanityEvent) => {
   try {
+    const startTime = new Date(event.start)
     let endTime: Date
 
     // if event end time is undefined, set it to the same date as the start time
@@ -29,8 +30,8 @@ const getCalLink = (event: SanityEvent) => {
     } else {
       endTime = new Date(event.end)
     }
-    const startTimeStr = formatTime(new Date(event.start))
-    const endTimeStr = formatTime(new Date(endTime))
+    const startTimeStr = formatTime(startTime)
+    const endTimeStr = formatTime(endTime)
     return new URL(
       `https://www.google.com/calendar/render?action=TEMPLATE&text=${event.name} (Purdue Hackers)&location=${event.loc}&details=A Purdue Hackers Event&dates=${startTimeStr}00Z%2F${endTimeStr}00Z`
     ).href
